@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "610488702018",
+    "project_id": "naturecollection-eec1f",
+    "storage_bucket": "naturecollection-eec1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610488702018:android:c4f4e4696d780814cd49db",
+        "android_client_info": {
+          "package_name": "fr.yanis.naturecollection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610488702018-7gi2aeh7nmc8pk5qom1vias4ilhd2546.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBif8uSUguk_DnwFujat5KIOLd2o9YLNQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610488702018-7gi2aeh7nmc8pk5qom1vias4ilhd2546.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
