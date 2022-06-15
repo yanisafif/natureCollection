@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import fr.yanis.naturecollection.R
 import fr.yanis.naturecollection.adapter.PlantAdapter
+import fr.yanis.naturecollection.adapter.PlantItemDecoration
 
 class HomeFragment : Fragment() {
 
@@ -20,7 +21,12 @@ class HomeFragment : Fragment() {
 
         // recuperer le recyclerView
         val horizontalRecyclerView = view.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
-        horizontalRecyclerView.adapter = PlantAdapter()
+        horizontalRecyclerView.adapter = PlantAdapter(R.layout.item_horizontal_plant)
+
+        // recuperer le second recyclerView
+        val verticalRecyclerView = view.findViewById<RecyclerView>(R.id.vertical_recycler_view)
+        verticalRecyclerView.adapter = PlantAdapter(R.layout.item_vertical_plant)
+        verticalRecyclerView.addItemDecoration(PlantItemDecoration())
 
         return view
     }
