@@ -8,13 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import fr.yanis.naturecollection.MainActivity
-import fr.yanis.naturecollection.PlantModel
-import fr.yanis.naturecollection.PlantRepository
-import fr.yanis.naturecollection.R
+import fr.yanis.naturecollection.*
 
 class PlantAdapter(
-    private val context: MainActivity,
+    val context: MainActivity,
     private val plantList: List<PlantModel>,
     private val layoutId: Int)
     : RecyclerView.Adapter<PlantAdapter.ViewHolder>() {
@@ -62,6 +59,12 @@ class PlantAdapter(
             currentPlant.liked = !currentPlant.liked
             // mettre à jour l'objet plante
             repo.updatePlant(currentPlant)
+        }
+
+        // Interaction lors du clic sur une plante
+        holder.itemView.setOnClickListener() {
+            // Afficher la popup
+            PlantPopup(this, currentPlant).show()
         }
     }
 
