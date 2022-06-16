@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import fr.yanis.naturecollection.MainActivity
 import fr.yanis.naturecollection.PlantModel
+import fr.yanis.naturecollection.PlantRepository
 import fr.yanis.naturecollection.R
 
 class PlantAdapter(
@@ -36,6 +37,9 @@ class PlantAdapter(
         // Recuper les informations de la plante
         val currentPlant = plantList[position]
 
+        // Recuperer le repository
+        val repo = PlantRepository()
+
         // Utiliser glide pour recuperer l'image à partir de son lien -> composant
         Glide.with(context).load(Uri.parse(currentPlant.imageUrl)).into(holder.plantImage)
 
@@ -50,6 +54,14 @@ class PlantAdapter(
             holder.starIcon.setImageResource(R.drawable.ic_star)
         }else{
             holder.starIcon.setImageResource(R.drawable.ic_unstar)
+        }
+
+        // rajouter une interaction sur cette etoile
+        holder.starIcon.setOnClickListener() {
+            // inverse si le bouton est like ou non
+            currentPlant.liked = !currentPlant.liked
+            // mettre à jour l'objet plante
+            repo.updatePlant(currentPlant)
         }
     }
 
