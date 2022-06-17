@@ -10,6 +10,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.UploadTask
 import fr.yanis.naturecollection.PlantRepository.Singleton.databaseRef
+import fr.yanis.naturecollection.PlantRepository.Singleton.downloadUri
 import fr.yanis.naturecollection.PlantRepository.Singleton.plantList
 import fr.yanis.naturecollection.PlantRepository.Singleton.storageReference
 import java.net.URI
@@ -30,6 +31,9 @@ class PlantRepository {
 
         // Créer une liste qui va contenir nos plantes
         val plantList = arrayListOf<PlantModel>()
+
+        // Contenir le lien de l'image courante
+        var downloadUri: Uri? = null
     }
 
     fun updateData(callback: () -> Unit) {
@@ -57,7 +61,7 @@ class PlantRepository {
         })
     }
     // Création d'une function pour envoyer des fichiers sur le storage
-    fun uploadImage(file: Uri) {
+    fun uploadImage(file: Uri, callback: () -> Unit) {
         // Vérifier que ce fichier n'est pas null
         if (file != null) {
             // Nom du fichier via un UUID random
@@ -78,7 +82,8 @@ class PlantRepository {
                 // Verifier si tout a bien fonctionné
                 if (task.isSuccessful) {
                     // Recuperer l'image
-                    val downloadURI = task.result
+                    downloadUri = task.result
+                    callback()
                 }
             }
         }
@@ -86,6 +91,9 @@ class PlantRepository {
 
     // mettre à jour un objet plante en bdd
     fun updatePlant(plant: PlantModel) = databaseRef.child(plant.id).setValue(plant)
+
+    // Inserer une nouvelle plante en bdd
+    fun insertPlant(plant: PlantModel) = databaseRef.child(plant.id).setValue(plant)
 
     // supprimer une plante de la bdd
     fun deletePlant(plant: PlantModel) = databaseRef.child(plant.id).removeValue()

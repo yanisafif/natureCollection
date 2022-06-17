@@ -4,13 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.1945" />
-        <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/activity_main.xml" value="0.4083333333333333" />
+        <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/drawable/bottom_nav_color.xml" value="0.2115" />
+        <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/fragment_add_plant.xml" value="0.1" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/fragment_collection.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/item_horizontal_plant.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/item_vertical_plant.xml" value="0.49814585908529047" />
         <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/layout/popup_plants_details.xml" value="0.33" />
+        <entry key="..\:/Users/yanis/AndroidStudioProjects/NatureCollection/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
