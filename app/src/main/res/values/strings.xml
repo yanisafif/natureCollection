@@ -20,9 +20,9 @@
         <item>Croissance : Rapide</item>
     </string-array>
     <string-array name="add_plant_page_water_spinner_input">
-        <item>Croissance : Faible</item>
-        <item>Croissance : Moyenne</item>
-        <item>Croissance : Elevee</item>
+        <item>Eau : Faible</item>
+        <item>Eau : Moyenne</item>
+        <item>Eau : Elevee</item>
     </string-array>
 
     <string name="add_plant_page_confirm_button">Confirmer</string>

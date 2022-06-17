@@ -24,8 +24,9 @@ class CollectionFragment(
     ): View? {
         val view = inflater?.inflate(R.layout.fragment_collection, container, false)
 
-        // Recuperer ma recyclerView
-        val collectionRecyclerView =view.findViewById<RecyclerView>(R.id.collection_recycler_list)
+        // Recuperer ma recyclerView déjà utilisé dans une autre vue
+        val collectionRecyclerView = view.findViewById<RecyclerView>(R.id.collection_recycler_list)
+        // Récupérer la data à mettre dans la vue
         collectionRecyclerView.adapter = PlantAdapter(context, plantList.filter { it.liked }, R.layout.item_vertical_plant)
         collectionRecyclerView.layoutManager = LinearLayoutManager(context)
         collectionRecyclerView.addItemDecoration(PlantItemDecoration())
